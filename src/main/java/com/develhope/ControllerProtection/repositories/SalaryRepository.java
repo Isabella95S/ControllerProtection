@@ -1,4 +1,7 @@
 package com.develhope.ControllerProtection.repositories;
 
-public interface SalaryRepository {
+import com.develhope.ControllerProtection.models.Salary;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface SalaryRepository extends JpaRepository<Salary, Integer> {
 }

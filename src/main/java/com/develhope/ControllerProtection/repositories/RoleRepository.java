@@ -1,4 +1,7 @@
 package com.develhope.ControllerProtection.repositories;
 
-public interface RoleRepository {
+import com.develhope.ControllerProtection.models.Role;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface RoleRepository extends JpaRepository<Role, Integer> {
 }
