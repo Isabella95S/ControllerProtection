@@ -1,7 +1,12 @@
 package com.develhope.ControllerProtection.models;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.util.Set;
+@Getter
+@Setter
 @Entity
 public class User {
     @Id
@@ -10,6 +15,22 @@ public class User {
 
     @Column
     private String name;
+
+    @Column(nullable = false)
+    private String username;
+    @Column(nullable = false)
+    private String password;
     @Column
     private String surname;
+    @ManyToMany
+    @JoinTable(
+            name = "users_roles",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
+    private Set<Role> roles;
+
+
+    public User() {
+    }
 }

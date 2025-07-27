@@ -13,4 +13,6 @@ public class Salary {
     private Integer sum;
     @Column
     private LocalDate data_Erogaz_Salario;
+
+
 }
