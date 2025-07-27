@@ -8,7 +8,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.List;
+
 import java.util.Set;
 
 public class DatabaseUserDetails implements UserDetails {
@@ -36,6 +36,6 @@ public class DatabaseUserDetails implements UserDetails {
 
     @Override
     public String getUsername() {
-        return user.getUser_name();
+        return user.getUsername();
     }
 }
