@@ -1,5 +1,6 @@
 package com.develhope.ControllerProtection.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -14,5 +15,8 @@ public class Salary {
     @Column
     private LocalDate data_Erogaz_Salario;
 
-
+    @OneToOne
+    @JoinColumn(nullable = false)
+    @JsonIgnore
+    private User user;
 }
