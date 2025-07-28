@@ -10,6 +10,7 @@ public class Role {
     @Column
     private String name;
 
+
     public Integer getId() {
         return id;
     }
