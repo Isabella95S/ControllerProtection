@@ -1,5 +1,6 @@
 package com.develhope.ControllerProtection.services;
 
+import com.develhope.ControllerProtection.auth.DatabaseUserDetails;
 import com.develhope.ControllerProtection.models.User;
 import com.develhope.ControllerProtection.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ public class DatabaseUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<User> optional= userRepository.findByUsername(username);
-        return null;
+        if (optional.isEmpty()) throw new UsernameNotFoundException("Utente non trovato") ;
+        return new DatabaseUserDetails(optional.get());
     }
 }
