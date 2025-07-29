@@ -29,8 +29,8 @@ public class SalaryController {
             return  null;
         }
     }
-
-    public Salary findByUser(@PathVariable("id") Integer id) {
+    @GetMapping("/{id}/salaries")
+    public Salary findSalariesByUser(@PathVariable("id") Integer id) {
         Optional<User> optional = userRepository.findById(id);
         if (optional.isEmpty()) {
             return optional.get().getSalary();
