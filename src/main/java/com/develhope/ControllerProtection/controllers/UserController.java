@@ -6,10 +6,11 @@ import jakarta.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/user")
 public class UserController {
 
 //    @GetMapping
@@ -25,6 +26,10 @@ public class UserController {
         }else {
             return null;
         }
+    }
+    @GetMapping("/users")
+    public List<User> getAllUsers() {
+        return userRepo.findAll();
     }
     @PostMapping("")
     public User create(@RequestBody User user) {
