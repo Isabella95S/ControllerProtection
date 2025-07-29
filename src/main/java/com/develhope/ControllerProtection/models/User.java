@@ -1,12 +1,14 @@
 package com.develhope.ControllerProtection.models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Set;
 @Getter
 @Setter
+@AllArgsConstructor
 @Entity
 public class User {
     @Id
@@ -20,7 +22,7 @@ public class User {
     private String username;
     @Column(nullable = false)
     private String password;
-    @Column
+    @Column(nullable = false)
     private String surname;
     @ManyToMany
     @JoinTable(

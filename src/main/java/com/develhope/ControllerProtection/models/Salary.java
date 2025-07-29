@@ -10,8 +10,8 @@ public class Salary {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    @Column
-    private Integer sum;
+    @Column(nullable = false)
+    private Double sum;
     @Column
     private LocalDate data_Erogaz_Salario;
 
