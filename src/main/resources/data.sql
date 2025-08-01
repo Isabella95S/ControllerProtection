@@ -1,14 +1,11 @@
-insert into role(name) values ('ADMIN','USER');
+INSERT INTO role (name) VALUES ('ADMIN');
+INSERT INTO role (name) VALUES ('USER');
 
-insert into salary (sum, dataErogazSalario) values
-(2300, '2025-07-12 10:30:002'),
-(1500,'2025-07-05 15:00:00'),
-(1600,'2025-07-18 09:45:00'),
-(1400,'2025-07-22 11:20:00');
+INSERT INTO user (name,surname,username, password) VALUES ('Isabella','De Sanctis','admin','$2a$10$3uRtQDuZ5dzv4s1X9aKq0uT3CZhCvPvQHCHJ/PzWzQqvzpJmDccmu'); -- password: admin
+INSERT INTO user (name,surname,username, password) VALUES ('Enrico','Bellagamba','user', '$2a$10$3uRtQDuZ5dzv4s1X9aKq0uT3CZhCvPvQHCHJ/PzWzQqvzpJmDccmu'); -- password: admin
 
-insert into user (name,surname,username,password) values
+INSERT INTO users_roles(role_id,user_id) VALUES (1,1);
+INSERT INTO users_roles(role_id,user_id) VALUES (2,2);
 
-('Isabella', 'De Sanctis', 'isades','fdjkfshjs'),
-('Gaetano','Carpentiere','gaetmaster','fdfdfd' ),
-('Luciano','Addeo','luciano2002','ffibuebfb'),
-('Enrico','Bellagamba','HenryBella','dkweifw0');
+INSERT INTO salary (`sum`, user_id) VALUES (3000.0, 1);
+INSERT INTO salary (`sum`, user_id) VALUES (2000.0, 2);
