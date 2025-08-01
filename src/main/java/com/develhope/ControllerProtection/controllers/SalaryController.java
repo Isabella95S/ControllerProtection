@@ -38,7 +38,7 @@ public class SalaryController {
             return optional.get().getSalary();
         }
     }
-    @GetMapping("/salaries")
+    @GetMapping
     public List<Salary> getAllSalaries() {
         return salaryRepo.findAll();
     }
