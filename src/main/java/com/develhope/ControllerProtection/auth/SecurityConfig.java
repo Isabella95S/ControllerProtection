@@ -32,10 +32,12 @@ public class SecurityConfig {
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/salary/**").hasRole("ADMIN")
                 .requestMatchers("/users/**").hasAnyRole("USER", "ADMIN")
+                .requestMatchers("/","/login","/public/**").permitAll() //homepage accessibile
                 .anyRequest().authenticated()
             )
             .formLogin(form -> form
-                .permitAll()
+                    .defaultSuccessUrl("/users",true) //redirect dopo il login
+                    .permitAll()
             )
             .logout(logout -> logout.permitAll());
 
